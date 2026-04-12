@@ -1,0 +1,70 @@
+#root {
+    flex-grow: 1;
+}
+
+#menu-container {
+    position: absolute;
+    left: 150px;
+    top: 430px;
+    width: 560px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 0;
+}
+
+#start-button,
+#settings-button,
+#exit-button {
+    height: 88px;
+    margin-bottom: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    font-size: 36px;
+    -unity-font-style: bold;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+    letter-spacing: 2px;
+}
+
+#start-button:hover,
+#settings-button:hover,
+#exit-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#start-button:active,
+#settings-button:active,
+#exit-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}
+
+#exit-button {
+    margin-bottom: 0;
+}

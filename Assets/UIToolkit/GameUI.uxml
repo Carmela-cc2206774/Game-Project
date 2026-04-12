@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIToolkit/MainMenu.uss?fileID=7433441132597879392&amp;guid=02a56602867d0a9419aa8e47e16e0cc7&amp;type=3#MainMenu" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="menu-container" style="height: 408px; top: 424px; width: 516px; left: 168px;">
+            <ui:Button name="start-button" text="Start Game" style="align-items: stretch; justify-content: flex-start; -unity-text-align: middle-center;" />
+            <ui:Button name="settings-button" text="Settings" style="-unity-text-align: middle-center;" />
+            <ui:Button name="exit-button" text="Exit" style="-unity-text-align: middle-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
