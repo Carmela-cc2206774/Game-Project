@@ -13,6 +13,9 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 
+		// ✅ NEW: MagicArm2
+		public bool magicArm2;
+
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -28,7 +31,7 @@ namespace StarterAssets
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
+			if (cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
 			}
@@ -43,13 +46,18 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
-#endif
 
+		// ✅ NEW: called by Input System action "MagicArm2"
+		public void OnMagicArm2(InputValue value)
+		{
+			magicArm2 = value.isPressed;
+		}
+#endif
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
-		} 
+		}
 
 		public void LookInput(Vector2 newLookDirection)
 		{
@@ -65,7 +73,13 @@ namespace StarterAssets
 		{
 			sprint = newSprintState;
 		}
-		
+
+		// ✅ Optional helper if you want to clear it after using it
+		public void MagicArm2Input(bool newState)
+		{
+			magicArm2 = newState;
+		}
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -76,5 +90,4 @@ namespace StarterAssets
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
 	}
-	
 }

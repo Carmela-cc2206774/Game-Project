@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
+﻿ using UnityEngine;
+#if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
 
@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 namespace StarterAssets
 {
     [RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
     public class ThirdPersonController : MonoBehaviour
@@ -97,8 +97,9 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDMagicArm2; // NEW
 
-#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
@@ -139,7 +140,7 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
@@ -153,13 +154,21 @@ namespace StarterAssets
         }
 
         private void Update()
-        {
-            _hasAnimator = TryGetComponent(out _animator);
+{
+    _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
-        }
+    // NEW: Trigger MagicArm2 when you press 2 (from StarterAssetsInputs)
+    if (_hasAnimator && _input.magicArm2)
+    {
+        _animator.SetTrigger(_animIDMagicArm2);
+        _input.magicArm2 = false; // important: consume it so it doesn't spam
+    }
+
+    JumpAndGravity();
+    GroundedCheck();
+    Move();
+}
+
 
         private void LateUpdate()
         {
@@ -173,6 +182,8 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDMagicArm2 = Animator.StringToHash("MagicArm2"); // NEW (must match Animator Trigger name)
+
         }
 
         private void GroundedCheck()
