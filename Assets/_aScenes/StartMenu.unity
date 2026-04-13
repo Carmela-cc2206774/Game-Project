@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   uiDocument: {fileID: 1054756314}
-  nextSceneName: World
+  nextSceneName: Prologue
 --- !u!4 &1432592798
 Transform:
   m_ObjectHideFlags: 0
