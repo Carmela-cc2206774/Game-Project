@@ -52,7 +52,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Bash",
+                    "name": "Punch",
                     "type": "Button",
                     "id": "6729e559-8bd3-4228-94bf-48e939b7991c",
                     "expectedControlType": "",
@@ -265,7 +265,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Bash",
+                    "action": "Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
