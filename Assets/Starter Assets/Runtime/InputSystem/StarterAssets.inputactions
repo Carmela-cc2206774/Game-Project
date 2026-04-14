@@ -43,9 +43,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MagicArm2",
+                    "name": "RoundhouseKick",
                     "type": "Button",
-                    "id": "90bb0741-7115-4c3a-aba5-8a86396d1072",
+                    "id": "d1b4c3b4-cae0-46a4-b68e-d0f7476b2b63",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Bash",
+                    "type": "Button",
+                    "id": "6729e559-8bd3-4228-94bf-48e939b7991c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CrossPunch",
+                    "type": "Button",
+                    "id": "13826173-d61c-4df4-bf95-10dd89af0402",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -231,12 +249,34 @@
                 },
                 {
                     "name": "",
-                    "id": "a3d5d06c-1c6e-425e-bcea-09ef5a9a8dd0",
+                    "id": "1b215a3e-9fd2-4565-bc47-cff74ce884f2",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RoundhouseKick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d292580c-559b-47d5-b5e2-942c3f859d0d",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MagicArm2",
+                    "action": "Bash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3566783-1e1d-4111-8faa-bc35f11f9f29",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CrossPunch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
