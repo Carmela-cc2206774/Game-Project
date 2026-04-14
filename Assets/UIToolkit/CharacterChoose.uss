@@ -1,0 +1,152 @@
+#root {
+    flex-grow: 1;
+}
+
+#background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("project://database/Assets/Textures/dressup_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#main-layout {
+    position: relative;
+    flex-grow: 1;
+}
+
+#character-section {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    translate: -50% -50%;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#character-container {
+    width: 300px;
+    height: 620px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 36px;
+    margin-right: 36px;
+}
+
+#character-display {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Arrow buttons */
+#left-arrow-button,
+#right-arrow-button {
+    width: 88px;
+    height: 88px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    font-size: 34px;
+    -unity-font-style: bold;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-bottom-right-radius: 44px;
+
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+}
+
+#left-arrow-button:hover,
+#right-arrow-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#left-arrow-button:active,
+#right-arrow-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}
+
+/* Save button */
+#bottom-right-panel {
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#save-button {
+    width: 250px;
+    height: 88px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    font-size: 36px;
+    -unity-font-style: bold;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+    letter-spacing: 2px;
+}
+
+#save-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#save-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}

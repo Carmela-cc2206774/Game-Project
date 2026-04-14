@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIToolkit/CharacterChoose.uss?fileID=7433441132597879392&amp;guid=a8fa8a9964f81434ead6c44ccb2daf44&amp;type=3#CharacterChoose" />
+    <ui:VisualElement name="root" style="width: 347px;">
+        <ui:VisualElement name="background" />
+        <ui:VisualElement name="main-layout">
+            <ui:VisualElement name="character-section">
+                <ui:Button name="left-arrow-button" text="◀" />
+                <ui:VisualElement name="character-container">
+                    <ui:VisualElement name="character-display" />
+                </ui:VisualElement>
+                <ui:Button name="right-arrow-button" text="▶" />
+            </ui:VisualElement>
+            <ui:VisualElement name="bottom-right-panel">
+                <ui:Button name="save-button" text="SAVE" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
