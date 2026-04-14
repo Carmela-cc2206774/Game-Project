@@ -1,0 +1,276 @@
+#shell-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+}
+
+#dim-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 14, 10, 0.18);
+    display: none;
+}
+
+#shell-container {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    flex-direction: row;
+    align-items: flex-start;
+    display: none;
+}
+
+#shell-panel {
+    width: 220px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 16px;
+
+    background-color: rgba(34, 16, 18, 0.55);
+
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+}
+
+#shell-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+#menu-title {
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    -unity-font-style: bold;
+    font-size: 24px;
+    color: rgb(255, 241, 210);
+    unity-text-align: middle-left;
+    letter-spacing: 2px;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+#close-button {
+    width: 46px;
+    height: 46px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    -unity-font-style: bold;
+    font-size: 22px;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+}
+
+#close-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#close-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}
+
+#map-button,
+#save-button,
+#exit-button {
+    height: 68px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    -unity-font-style: bold;
+    font-size: 22px;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+    letter-spacing: 1px;
+}
+
+#map-button:hover,
+#save-button:hover,
+#exit-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#map-button:active,
+#save-button:active,
+#exit-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}
+
+#exit-button {
+    margin-bottom: 0;
+}
+
+#quest-panel {
+    width: 300px;
+    min-height: 340px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-color: rgba(34, 16, 18, 0.55);
+
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+}
+
+#quest-title {
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    -unity-font-style: bold;
+    font-size: 22px;
+    color: rgb(255, 241, 210);
+    margin-bottom: 14px;
+    unity-text-align: middle-left;
+}
+
+#quest-scrollview {
+    flex-grow: 1;
+    max-height: 280px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#quest-list {
+    flex-direction: column;
+}
+
+#quest-item-1,
+#quest-item-2,
+#quest-item-3 {
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    font-size: 17px;
+    color: rgb(255, 232, 220);
+    margin-bottom: 12px;
+    white-space: normal;
+    unity-text-align: upper-left;
+}
+
+#menu-open-button {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    width: 180px;
+    height: 64px;
+
+    -unity-font-definition: resource("Fonts/Cinzel-Regular");
+    -unity-font-style: bold;
+    font-size: 24px;
+
+    color: rgb(255, 241, 210);
+    background-color: rgba(55, 24, 28, 0.48);
+
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-top-width: 1.5px;
+    border-bottom-width: 1.5px;
+
+    border-left-color: rgba(220, 174, 86, 0.95);
+    border-right-color: rgba(220, 174, 86, 0.95);
+    border-top-color: rgba(220, 174, 86, 0.95);
+    border-bottom-color: rgba(220, 174, 86, 0.95);
+
+    unity-text-align: middle-center;
+    letter-spacing: 2px;
+}
+
+#menu-open-button:hover {
+    background-color: rgba(156, 72, 112, 0.78);
+    color: rgb(255, 245, 248);
+
+    border-left-color: rgb(255, 196, 210);
+    border-right-color: rgb(255, 196, 210);
+    border-top-color: rgb(255, 196, 210);
+    border-bottom-color: rgb(255, 196, 210);
+}
+
+#menu-open-button:active {
+    background-color: rgba(120, 52, 84, 0.92);
+    color: rgb(255, 234, 240);
+}
