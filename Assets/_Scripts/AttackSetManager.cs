@@ -6,7 +6,8 @@ public class PlayerAttackInput : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private static readonly int Kick = Animator.StringToHash("RoundhouseKick");
-    private static readonly int Bash = Animator.StringToHash("Bash");
+    private static readonly int Punch = Animator.StringToHash("Punch");
+    private static readonly int CrossPunch = Animator.StringToHash("CrossPunch");
 
     private bool isAttacking;
 
@@ -26,7 +27,12 @@ public class PlayerAttackInput : MonoBehaviour
 
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            DoBash();
+            DoPunch();
+        }
+
+          if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            DoCrossPunch();
         }
     }
 
@@ -36,10 +42,16 @@ public class PlayerAttackInput : MonoBehaviour
         animator.SetTrigger(Kick);
     }
 
-    void DoBash()
+    void DoPunch()
     {
         isAttacking = true;
-        animator.SetTrigger(Bash);
+        animator.SetTrigger(Punch);
+    }
+
+     void DoCrossPunch()
+    {
+        isAttacking = true;
+        animator.SetTrigger(CrossPunch);
     }
 
     // Called via Animation Event at end of attack

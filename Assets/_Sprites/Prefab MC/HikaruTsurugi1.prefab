@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3828695073176517870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95986235646133730}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &95986235646133730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3828695073176517870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00097, y: 0.01366, z: 0.00403}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7820670455685118853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7710764155950439534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
       propertyPath: m_Controller
@@ -78,6 +109,41 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 99b99c86e8b58b647a954b32dad2de83, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 95986235646133730}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3175978291114522230}
   m_SourcePrefab: {fileID: 100100000, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
+--- !u!1 &7476902220784509247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
+  m_PrefabInstance: {fileID: 7710764155950439534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3175978291114522230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476902220784509247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993c20b0b65083d45854432a75e9d969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMeleeDamage
+  attackPoint: {fileID: 95986235646133730}
+  attackRange: 1.2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  punchDamage: 20
+  kickDamage: 30
+--- !u!4 &7820670455685118853 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23f66c247c370e84695f4dba7df86aaa, type: 3}
+  m_PrefabInstance: {fileID: 7710764155950439534}
+  m_PrefabAsset: {fileID: 0}
