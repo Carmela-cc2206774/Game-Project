@@ -68,8 +68,62 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a85c3d5d547e7ef42b9333dfe68a8b0a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 80182b5ecfa8c59448fc109e141ff510, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7677907929731708314}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7296170815434853632}
   m_SourcePrefab: {fileID: 100100000, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+--- !u!1 &1775879773314941197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+  m_PrefabInstance: {fileID: 1469397163161173084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &-7677907929731708314
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775879773314941197}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.017
+  m_Center: {x: 0, y: 0.01, z: 0}
+--- !u!114 &7296170815434853632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775879773314941197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bbfb4a06b6d9c4f9a128a38f205df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCWaveTrigger
+  animator: {fileID: 4976140341841265101}
+--- !u!95 &4976140341841265101 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 5f0c9efbbdeb1364eae3dbc6bdaaa259, type: 3}
+  m_PrefabInstance: {fileID: 1469397163161173084}
+  m_PrefabAsset: {fileID: 0}
