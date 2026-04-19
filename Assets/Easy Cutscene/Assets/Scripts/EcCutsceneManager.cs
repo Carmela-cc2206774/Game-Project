@@ -52,6 +52,9 @@ namespace HisaGames.CutsceneManager
         [Tooltip("Delay between each character in chat typing (in seconds).")]
         public float chatTypingDelay;
 
+        [Tooltip("Object that serves as a border for the cutscene. Can be toggled on or off.")]
+        public GameObject borderObject;
+
         private void Awake()
         {
             instance = this;
@@ -115,6 +118,12 @@ namespace HisaGames.CutsceneManager
                 temp.StartCutscene();
             }
         }
+
+        public void ToggleBorder()
+        {
+            borderObject.SetActive(!borderObject.activeSelf);
+        }
+
 
 
         /// <summary>

@@ -144,13 +144,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6382561}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 272253255}
-  m_Father: {fileID: 724837862}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6382563
 MonoBehaviour:
@@ -164,16 +164,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
     propsData: []
-    nameString: 
-    chatString: 
+    nameString: temp text
+    chatString: temp text
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1894220491}
+        - m_Target: {fileID: 7292613249376819409}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -197,6 +199,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 6382563}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 410723093}
+          m_TargetAssemblyTypeName: AudioFader, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.5
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -204,7 +230,30 @@ MonoBehaviour:
     charactersData: []
     propsData: []
     nameString: Hikaru
-    chatString: 
+    chatString: temp text
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6382563}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Island1
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: End
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: temp text
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
@@ -224,8 +273,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &94818924
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,24 +304,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
     propsData: []
-    nameString: 
-    chatString: 
+    nameString: temp text
+    chatString: temp text
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1894220491}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 94818925}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -288,10 +339,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
-  - name: Transition/End
+  - name: End
     charactersData: []
     propsData: []
     nameString: Hikaru
@@ -302,7 +365,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 724837863}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -319,8 +382,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!4 &94818926
 Transform:
   m_ObjectHideFlags: 0
@@ -329,124 +392,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94818924}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1059726862}
-  m_Father: {fileID: 724837862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &237986522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 237986524}
-  - component: {fileID: 237986523}
-  m_Layer: 0
-  m_Name: Cutscene-8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &237986523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237986522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneData:
-  - name: Scene 1A
-    charactersData: []
-    propsData: []
-    nameString: 
-    chatString: 
-    cutscenePreEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1894220491}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 410723092}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: set_volume
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    cutscenePostEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Transition/End
-    charactersData: []
-    propsData: []
-    nameString: Hikaru
-    chatString: 'The world around me faded...
-
-      until it was just me and the
-      story.'
-    cutscenePreEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 724837863}
-          m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
-            Assembly-CSharp
-          m_MethodName: InitCutscenes
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Cutscene-9
-            m_BoolArgument: 0
-          m_CallState: 2
-    cutscenePostEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
---- !u!4 &237986524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237986522}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1728647702}
-  m_Father: {fileID: 724837862}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &272253254
 GameObject:
@@ -598,6 +550,252 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295923178}
   m_CullTransparentMesh: 1
+--- !u!1001 &323620288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 812915059}
+    m_Modifications:
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2054.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1110.4309
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.42521843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.378479
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.52285767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499200389228731884, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+      propertyPath: m_Name
+      value: Border-Cutscene
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+--- !u!224 &323620289 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1810465133485720098, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+  m_PrefabInstance: {fileID: 323620288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &394393417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394393418}
+  - component: {fileID: 394393420}
+  - component: {fileID: 394393419}
+  m_Layer: 0
+  m_Name: UI FX Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394393418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394393417}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1093677834}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394393419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394393417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50506ebeb8244604ab97669ffdf1c3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioFader
+  audioSource: {fileID: 394393420}
+  defaultFadeTime: 1
+--- !u!82 &394393420
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394393417}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.95
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &410723090
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +842,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a575e51ee6b4f764088926139f0eaf87, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.67
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -773,7 +971,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860698042}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &516764360
 MonoBehaviour:
@@ -787,6 +985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
@@ -840,18 +1040,50 @@ MonoBehaviour:
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
-  - name: Transition/End
+  - name: Transition
     charactersData: []
     propsData: []
     nameString: Hikaru
-    chatString: 'The world around me faded...
-
-      until it was just me and the
-      story.'
+    chatString: 
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6574975664481987987}
+        - m_Target: {fileID: 516764360}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Cutscene-6
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Cutscene-6
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: End
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -868,8 +1100,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &527808745
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +1177,7 @@ RectTransform:
   m_LocalScale: {x: 2.3517325, y: 2.5633886, z: 2.3517325}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6574975664178495478}
+  m_Father: {fileID: 9100870394418409352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -990,6 +1222,163 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535623852}
   m_CullTransparentMesh: 1
+--- !u!1 &601725290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601725291}
+  - component: {fileID: 601725292}
+  m_Layer: 0
+  m_Name: Cutscene-8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &601725291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601725290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1728647702}
+  m_Father: {fileID: 1268120545690840533}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601725292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601725290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
+  cutsceneData:
+  - name: Off GUI
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: huh..?
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 601725292}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 4
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: fade
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: temp text
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 601725292}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: Cutscene-9
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: end
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: temp text
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7735240679079704565}
+          m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
+            Assembly-CSharp
+          m_MethodName: InitCutscenes
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Cutscene-9
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 620509001}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0fb270d1eafde344ab3cd56f9eede945, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Cutscene-8
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 620509001}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0fb270d1eafde344ab3cd56f9eede945, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Cutscene-8
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  currentID: 0
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &620508999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1425,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.836
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1134,446 +1523,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioFader
   audioSource: {fileID: 620509001}
   defaultFadeTime: 1
---- !u!1001 &723463180
-PrefabInstance:
+--- !u!1 &661374876
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 812915059}
-    m_Modifications:
-    - target: {fileID: 961136114563400312, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Name
-      value: Cutscene-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: autoplayTime
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: chatTypingDelay
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: currentCutscene
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutscenes.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[0]'
-      value: 
-      objectReference: {fileID: 237986523}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1261918306}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[2]'
-      value: 
-      objectReference: {fileID: 94818925}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[3]'
-      value: 
-      objectReference: {fileID: 858227030}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1317118324}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[5]'
-      value: 
-      objectReference: {fileID: 6382563}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[6]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2871212086976588130, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527579246450283594, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Name
-      value: DialogueSceneTemplate-set2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527579246450283594, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -565
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -167
-      objectReference: {fileID: 0}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: ca2d3772aa5ed1148bfda522fb74b162, type: 3}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6165347625440888552, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6280922945490653928, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 13f81bf0699e160418d510435a9d8e9a, type: 3}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].name
-      value: Scene 1B
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].name
-      value: Transition/End
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].chatString
-      value: Finally...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].chatString
-      value: "Classes were exhausting today.\nOne lecture after another, \nendless
-        notes, endless talking...\nI thought the day would never end."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].chatString
-      value: "But at least it\u2019s over now."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].chatString
-      value: 'This was my favorite part of the day,
-
-        walking home with no
-        deadlines chasing me,
-
-        no group projects, no professors, no pressure.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].chatString
-      value: 'Just the evening air...
-
-        the glow of the cafes...
-
-        and
-        my favorite book.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].chatString
-      value: 'Just the evening air...
-
-        the glow of the cafes...
-
-        and
-        my favorite book.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 620509001}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 724837863}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 724837863}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 724837863}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 724837863}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayNextCutscene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 8300000, guid: 7070a02b63be7494486d3224fea50935, type: 3}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 961136114563400312, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 237986524}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1261918305}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 94818926}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 858227031}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1317118323}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 6382562}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
---- !u!4 &724837862 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 723463180}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &724837863 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661374877}
+  - component: {fileID: 661374879}
+  - component: {fileID: 661374878}
+  m_Layer: 5
+  m_Name: FadeOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &661374877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661374876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 812915059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &661374878
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 723463180}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 661374876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a1bda4f59ad0c4e8c5b3c3df6d8c0a, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &661374879
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661374876}
+  m_CullTransparentMesh: 1
 --- !u!1 &812915055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,8 +1692,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6574975664481987986}
-  - {fileID: 724837862}
+  - {fileID: 1268120545690840533}
+  - {fileID: 323620289}
+  - {fileID: 661374877}
+  - {fileID: 2771832789864299134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1781,16 +1807,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
     propsData: []
-    nameString: 
-    chatString: 
+    nameString: temp text
+    chatString: temp text
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1894220491}
+        - m_Target: {fileID: 7292613249376819409}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1817,6 +1845,29 @@ MonoBehaviour:
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
+  - name: fadeout
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: qwe
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 858227030}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Cutscene-12
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - name: Transition/End
     charactersData: []
     propsData: []
@@ -1825,7 +1876,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 724837863}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -1842,8 +1893,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!4 &858227031
 Transform:
   m_ObjectHideFlags: 0
@@ -1852,13 +1903,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858227029}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 295923179}
-  m_Father: {fileID: 724837862}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &860698041
 GameObject:
@@ -2222,17 +2273,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1012860186 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2060263746199728339, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 723463180}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1056687319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 834189128}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1076359012
 MonoBehaviour:
@@ -2428,6 +2468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
@@ -2461,6 +2503,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1076359012}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -2468,14 +2534,11 @@ MonoBehaviour:
     charactersData: []
     propsData: []
     nameString: Hikaru
-    chatString: 'The world around me faded...
-
-      until it was just me and the
-      story.'
+    chatString: 
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6574975664481987987}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -2492,8 +2555,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &1093677833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,8 +2566,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093677834}
+  - component: {fileID: 1093677835}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2525,8 +2589,23 @@ Transform:
   m_Children:
   - {fileID: 410723091}
   - {fileID: 620509000}
+  - {fileID: 394393418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1093677835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093677833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bda20194f1524f4786a8f8ba991e108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  audioSource: {fileID: 394393420}
+  clickSound: {fileID: 8300000, guid: 4ac466c52fbeaeb4f912b7742cdc9c45, type: 3}
 --- !u!1 &1105766585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2637,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 977323119}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1105766587
 MonoBehaviour:
@@ -2572,6 +2651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Off GUI
     charactersData: []
@@ -2595,15 +2676,50 @@ MonoBehaviour:
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
-  - name: Transition/End
+  - name: Transition
     charactersData: []
     propsData: []
-    nameString: Hikaru
-    chatString: 
+    nameString: temp
+    chatString: temp
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 724837863}
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Cutscene-8
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1105766587}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: Cutscene-8
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: end
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: temp text
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -2616,24 +2732,17 @@ MonoBehaviour:
             m_StringArgument: Cutscene-8
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 620509001}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 0fb270d1eafde344ab3cd56f9eede945, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Cutscene-8
-            m_BoolArgument: 0
-          m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
+--- !u!1 &1192791958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3499200389228731884, guid: 015a7f50951c2c3438f290f1ba1e8df2, type: 3}
+  m_PrefabInstance: {fileID: 323620288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261918304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,13 +2768,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261918304}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1056687320}
-  m_Father: {fileID: 724837862}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261918306
 MonoBehaviour:
@@ -2679,16 +2788,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
-  - name: Scene 1A
+  - name: fadein
     charactersData: []
     propsData: []
-    nameString: 
-    chatString: 
+    nameString: t
+    chatString: t
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1894220491}
+        - m_Target: {fileID: 7292613249376819409}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -2697,6 +2808,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1261918306}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2714,7 +2837,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 724837863}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -2743,8 +2866,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &1263290024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,13 +2972,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317118322}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1761297192}
-  m_Father: {fileID: 724837862}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1317118324
 MonoBehaviour:
@@ -2869,16 +2992,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
     propsData: []
-    nameString: 
-    chatString: 
+    nameString: temp text
+    chatString: temp text
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1894220491}
+        - m_Target: {fileID: 7292613249376819409}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -2902,6 +3027,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1317118324}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 4
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -2913,7 +3050,30 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 724837863}
+        - m_Target: {fileID: 1317118324}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: Cutscene-13
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Transition/End
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -2930,8 +3090,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 1552046603}
-  chatText: {fileID: 1012860186}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &1417178361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,13 +3192,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478050035}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 971855665}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1478050037
 MonoBehaviour:
@@ -3052,6 +3212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
@@ -3101,7 +3263,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6574975664481987987}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -3118,8 +3280,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &1532840861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,17 +3357,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532840861}
   m_CullTransparentMesh: 1
---- !u!114 &1552046603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 723463180}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1728647701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,7 +3387,7 @@ RectTransform:
   m_LocalScale: {x: 2.3517325, y: 2.563388, z: 2.3517325}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 237986524}
+  m_Father: {fileID: 601725291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3387,7 +3538,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1417178362}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1863748059
 MonoBehaviour:
@@ -3401,6 +3552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
@@ -3450,7 +3603,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6574975664481987987}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -3467,8 +3620,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
 --- !u!1 &1881928645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,11 +3749,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &1894220491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1677897962853347766, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 723463180}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2001832129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,7 +3780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1532840862}
-  m_Father: {fileID: 6574975664481987986}
+  m_Father: {fileID: 1268120545690840533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2001832131
 MonoBehaviour:
@@ -3646,6 +3794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
   cutsceneData:
   - name: Scene 1A
     charactersData: []
@@ -3655,17 +3805,29 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
+        - m_Target: {fileID: 2001832131}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 8c9f1e9ead130764ca1cf04c6fba1fe9, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 2
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
     cutscenePostEvent:
       m_PersistentCalls:
@@ -3693,7 +3855,7 @@ MonoBehaviour:
     cutscenePreEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6574975664481987987}
+        - m_Target: {fileID: 7735240679079704565}
           m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
             Assembly-CSharp
           m_MethodName: InitCutscenes
@@ -3710,497 +3872,798 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   currentID: 0
-  charaNameText: {fileID: 6574975664327786700}
-  chatText: {fileID: 6574975664069813468}
---- !u!114 &6574975664069813468 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2060263746199728339, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 8249897780908140903}
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
+--- !u!222 &773100490081064122
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6171372383100469253}
+  m_CullTransparentMesh: 1
+--- !u!114 &1228462052553798057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171372383100469253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2690852906919410575}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1268120545690840533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794641386402331949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: -6, z: 0}
+  m_LocalScale: {x: 0.42521843, y: 0.42521843, z: 0.42521843}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9100870394418409352}
+  - {fileID: 2001832130}
+  - {fileID: 1478050036}
+  - {fileID: 1863748058}
+  - {fileID: 516764359}
+  - {fileID: 1076359011}
+  - {fileID: 1105766586}
+  - {fileID: 601725291}
+  - {fileID: 1261918305}
+  - {fileID: 94818926}
+  - {fileID: 858227031}
+  - {fileID: 1317118323}
+  - {fileID: 6382562}
+  m_Father: {fileID: 812915059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602162244568133174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811153757069529119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7180120329779028622}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7735240679079704565}
+        m_TargetAssemblyTypeName: EcCutsceneManager, Assembly-CSharp
+        m_MethodName: PlayNextCutscene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2075993689613108187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163455689791236895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c4a232f1b87b04ba7fa5d4567b9b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 661374878}
+  defaultFadeSpeed: 2
+  cutsceneData:
+  - name: Scene 1A
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: Finally...
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 620509002}
+          m_TargetAssemblyTypeName: AudioFader, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 620509001}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 7070a02b63be7494486d3224fea50935, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2075993689613108187}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeFromBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Scene 1B
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: "Classes were exhausting today.\nOne lecture after another, \nendless
+      notes, endless talking...\nI thought the day would never end."
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Scene 1C
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: "But at least it\u2019s over now."
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 8c9f1e9ead130764ca1cf04c6fba1fe9, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Scene 1C
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 'This was my favorite part of the day,
+
+      walking home with no
+      deadlines chasing me,
+
+      no group projects, no professors, no pressure.'
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 8c9f1e9ead130764ca1cf04c6fba1fe9, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Scene 1C
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 'Just the evening air...
+
+      the glow of the cafes...
+
+      and
+      my favorite book.'
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Transition
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2075993689613108187}
+          m_TargetAssemblyTypeName: HisaGames.Cutscene.EcCutscene, Assembly-CSharp
+          m_MethodName: FadeToBlack
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 3
+            m_StringArgument: Cutscene-2
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7292613249376819409}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 3
+            m_StringArgument: Cutscene-2
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Transition/End
+    charactersData: []
+    propsData: []
+    nameString: Hikaru
+    chatString: 'Just the evening air...
+
+      the glow of the cafes...
+
+      and
+      my favorite book.'
+    cutscenePreEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7735240679079704565}
+          m_TargetAssemblyTypeName: HisaGames.CutsceneManager.EcCutsceneManager,
+            Assembly-CSharp
+          m_MethodName: InitCutscenes
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Cutscene-2
+            m_BoolArgument: 0
+          m_CallState: 2
+    cutscenePostEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  currentID: 0
+  charaNameText: {fileID: 2368836585330572125}
+  chatText: {fileID: 7992201195102509492}
+--- !u!114 &2368836585330572125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761566228135067618}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6574975664178495478 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 878570494964369135, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 8249897780908140903}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6574975664327786700 stripped
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3962264, g: 0.16073334, b: 0.16073334, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ca2d3772aa5ed1148bfda522fb74b162, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Character Name
+--- !u!114 &2690852906919410575
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 8249897780908140903}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6171372383100469253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6574975664481987986 stripped
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 13f81bf0699e160418d510435a9d8e9a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!4 &2771832789864299134
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 8249897780908140903}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6574975664481987987 stripped
+  m_GameObject: {fileID: 7292613249376819409}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4, y: -6, z: 0}
+  m_LocalScale: {x: 0.42521843, y: 0.42521843, z: 0.42521843}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3563710486856714072}
+  - {fileID: 8885987184998850667}
+  m_Father: {fileID: 812915059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2878416633903443855
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761566228135067618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 3563710486856714072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 8.5937, y: 3}
+  m_SizeDelta: {x: 862.0557, y: 113}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &3563710486856714072
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171372383100469253}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2475, y: 1.2475, z: 1.2475}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2878416633903443855}
+  m_Father: {fileID: 2771832789864299134}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -565, y: -167}
+  m_SizeDelta: {x: 529.34, y: 87.21}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3947474035902440922
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811153757069529119}
+  m_CullTransparentMesh: 1
+--- !u!1 &4794641386402331949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268120545690840533}
+  - component: {fileID: 7735240679079704565}
+  m_Layer: 0
+  m_Name: DialogueSceneTemplate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &5811153757069529119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8885987184998850667}
+  - component: {fileID: 3947474035902440922}
+  - component: {fileID: 7180120329779028622}
+  - component: {fileID: 1602162244568133174}
+  m_Layer: 5
+  m_Name: ChatPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5846483378808498600
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264710173433041955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8885987184998850667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 26, y: -15}
+  m_SizeDelta: {x: 2700.453, y: 350.7285}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6123760103903595136
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761566228135067618}
+  m_CullTransparentMesh: 1
+--- !u!1 &6171372383100469253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3563710486856714072}
+  - component: {fileID: 773100490081064122}
+  - component: {fileID: 2690852906919410575}
+  - component: {fileID: 1228462052553798057}
+  m_Layer: 5
+  m_Name: NamePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!222 &6350737374896414809
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264710173433041955}
+  m_CullTransparentMesh: 1
+--- !u!114 &7180120329779028622
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-  m_PrefabInstance: {fileID: 8249897780908140903}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5811153757069529119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cf2efd7ed5d516145b80e5e79c84ea1e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7264710173433041955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5846483378808498600}
+  - component: {fileID: 6350737374896414809}
+  - component: {fileID: 7992201195102509492}
+  m_Layer: 5
+  m_Name: ChatText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7292613249376819409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2771832789864299134}
+  m_Layer: 0
+  m_Name: EcGUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7735240679079704565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794641386402331949}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a1bda4f59ad0c4e8c5b3c3df6d8c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &8249897780908140903
-PrefabInstance:
+  characterPrefabs: []
+  propPrefabs: []
+  cutscenes:
+  - {fileID: 2075993689613108187}
+  - {fileID: 2001832131}
+  - {fileID: 1478050037}
+  - {fileID: 1863748059}
+  - {fileID: 516764360}
+  - {fileID: 1076359012}
+  - {fileID: 1105766587}
+  - {fileID: 601725292}
+  - {fileID: 1261918306}
+  - {fileID: 94818925}
+  - {fileID: 858227030}
+  - {fileID: 1317118324}
+  - {fileID: 6382563}
+  currentCutscene: Cutscene-1
+  transformSettings:
+  - name: Default
+    position: {x: 0, y: -1.75, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - name: Trunk Default
+    position: {x: 0, y: -15, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+  - name: Left
+    position: {x: -5, y: -1, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+  - name: Trunk Left
+    position: {x: -20, y: -1, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+  - name: Right
+    position: {x: 5, y: -1, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+  - name: Trunk Right
+    position: {x: 20, y: -1, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+  guiPanel: {fileID: 7292613249376819409}
+  autoplayTime: 5
+  characterTransitionSpeed: 35
+  chatTypingDelay: 0.04
+  borderObject: {fileID: 1192791958}
+--- !u!114 &7992201195102509492
+MonoBehaviour:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264710173433041955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3962264, g: 0.16073334, b: 0.16073334, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ca2d3772aa5ed1148bfda522fb74b162, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Chat Text
+--- !u!1 &8761566228135067618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2878416633903443855}
+  - component: {fileID: 6123760103903595136}
+  - component: {fileID: 2368836585330572125}
+  m_Layer: 5
+  m_Name: NameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8885987184998850667
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811153757069529119}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5846483378808498600}
+  m_Father: {fileID: 2771832789864299134}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -334.40234}
+  m_SizeDelta: {x: 1750, y: 311.1953}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &9100870394418409352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163455689791236895}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 812915059}
-    m_Modifications:
-    - target: {fileID: 961136114563400312, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Name
-      value: Cutscene-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: autoplayTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: chatTypingDelay
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: currentCutscene
-      value: Cutscene-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutscenes.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2001832131}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1478050037}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[3]'
-      value: 
-      objectReference: {fileID: 1863748059}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[4]'
-      value: 
-      objectReference: {fileID: 516764360}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[5]'
-      value: 
-      objectReference: {fileID: 1076359012}
-    - target: {fileID: 1811746914687934098, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: 'cutscenes.Array.data[6]'
-      value: 
-      objectReference: {fileID: 1105766587}
-    - target: {fileID: 2871212086976588130, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527579246450283594, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Name
-      value: DialogueSceneTemplate
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2475
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -565
-      objectReference: {fileID: 0}
-    - target: {fileID: 4830481806245359167, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -167
-      objectReference: {fileID: 0}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: ca2d3772aa5ed1148bfda522fb74b162, type: 3}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 5954403024280736314, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6165347625440888552, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6280922945490653928, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 13f81bf0699e160418d510435a9d8e9a, type: 3}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].name
-      value: Scene 1B
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].name
-      value: Scene 1C
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].name
-      value: Transition/End
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].chatString
-      value: Finally...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].chatString
-      value: "Classes were exhausting today.\nOne lecture after another, \nendless
-        notes, endless talking...\nI thought the day would never end."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].chatString
-      value: "But at least it\u2019s over now."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[2].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].chatString
-      value: 'This was my favorite part of the day,
-
-        walking home with no
-        deadlines chasing me,
-
-        no group projects, no professors, no pressure.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[3].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].chatString
-      value: 'Just the evening air...
-
-        the glow of the cafes...
-
-        and
-        my favorite book.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].chatString
-      value: 'Just the evening air...
-
-        the glow of the cafes...
-
-        and
-        my favorite book.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].nameString
-      value: Hikaru
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 620509002}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 620509001}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6574975664481987987}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6574975664481987987}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6574975664481987987}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6574975664481987987}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeIn
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayNextCutscene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCutscenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioFader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HisaGames.CutsceneManager.EcCutsceneManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 8300000, guid: 7070a02b63be7494486d3224fea50935, type: 3}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Cutscene-2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[0].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[5].cutscenePreEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[1].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976700744458283708, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      propertyPath: cutsceneData.Array.data[4].cutscenePostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 2001832130}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1478050036}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1863748058}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 516764359}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 1076359011}
-    - targetCorrespondingSourceObject: {fileID: 7198092202291414194, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1105766586}
-    - targetCorrespondingSourceObject: {fileID: 878570494964369135, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 535623853}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12203728d3a1e464eaadf211228723f3, type: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 535623853}
+  m_Father: {fileID: 1268120545690840533}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9163455689791236895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9100870394418409352}
+  - component: {fileID: 2075993689613108187}
+  m_Layer: 0
+  m_Name: Cutscene-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

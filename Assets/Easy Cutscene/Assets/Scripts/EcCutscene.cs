@@ -42,6 +42,11 @@ namespace HisaGames.Cutscene
             public float fadeSpeed;
         }
 
+        [Header("Fade Settings")]
+        [SerializeField] private Image fadeOverlay;
+        [SerializeField] private float defaultFadeSpeed = 2f;
+        private bool isFading = false;
+
         [System.Serializable]
         public class CSUnityEvent : UnityEvent { }
 
@@ -191,10 +196,20 @@ namespace HisaGames.Cutscene
         /// </summary>
         void PlayChatTypingAnimation()
         {
-            //Play Chat Text Typing Animation on Cutscene
+            if (chatText == null)
+            {
+                Debug.Log(gameObject.name + ": chatText is not assigned.");
+                return;
+            }
+
+            if (charaNameText == null)
+            {
+                Debug.Log(gameObject.name + ": charaNameText is not assigned.");
+                return;
+            }
+
             chatText.text = "";
             chatTextString = cutsceneData[currentID].chatString;
-            //CutsceneManager.instance.audioSource.Play();
             startTyping = true;
 
             charaNameText.text = cutsceneData[currentID].nameString;
@@ -203,7 +218,6 @@ namespace HisaGames.Cutscene
             else
                 charaNameText.transform.parent.gameObject.SetActive(true);
         }
-
         /// <summary>
         /// Displays the current characters and sets their animations and transforms.
         /// </summary>
@@ -368,15 +382,87 @@ namespace HisaGames.Cutscene
             }
         }
 
+        public void FadeToBlack(float speed = -1f)
+        {
+            if (fadeOverlay == null || isFading) return;
+
+            if (speed <= 0f)
+                speed = defaultFadeSpeed;
+
+            StartCoroutine(FadeToBlackThenNextRoutine(speed));
+        }
+
+        private IEnumerator FadeToBlackThenNextRoutine(float speed)
+        {
+            isFading = true;
+
+            Color color = fadeOverlay.color;
+
+            while (!Mathf.Approximately(color.a, 1f))
+            {
+                color.a = Mathf.MoveTowards(color.a, 1f, speed * Time.deltaTime);
+                fadeOverlay.color = color;
+                yield return null;
+            }
+
+            color.a = 1f;
+            fadeOverlay.color = color;
+
+            isFading = false;
+
+            PlayNextCutscene();
+        }
+
+        public void FadeFromBlack(float speed = -1f)
+        {
+            if (fadeOverlay == null || isFading) return;
+
+            if (speed <= 0f)
+                speed = defaultFadeSpeed;
+
+            StartCoroutine(FadeRoutine(0f, speed));
+        }
+
+        public void FadeTo(float targetAlpha, float speed = -1f)
+        {
+            if (fadeOverlay == null || isFading) return;
+
+            if (speed <= 0f)
+                speed = defaultFadeSpeed;
+
+            StartCoroutine(FadeRoutine(targetAlpha, speed));
+        }
+
+        private IEnumerator FadeRoutine(float targetAlpha, float speed)
+        {
+            isFading = true;
+
+            Color color = fadeOverlay.color;
+
+            while (!Mathf.Approximately(color.a, targetAlpha))
+            {
+                color.a = Mathf.MoveTowards(color.a, targetAlpha, speed * Time.deltaTime);
+                fadeOverlay.color = color;
+                yield return null;
+            }
+
+            color.a = targetAlpha;
+            fadeOverlay.color = color;
+
+            isFading = false;
+        }
+
         /// <summary>
         /// Automatically progresses to the next cutscene based on the timer.
         /// </summary>
         void AutoPlayingCutscene()
         {
+            if (chatText == null)
+                return;
+
             float temp = EcCutsceneManager.instance.autoplayTime;
             if (temp >= 0 && chatText.text == chatTextString)
             {
-                //auto play cutscene on
                 autoplayTime -= Time.deltaTime;
                 if (autoplayTime <= 0)
                 {
@@ -385,4 +471,7 @@ namespace HisaGames.Cutscene
             }
         }
     }
+
+
 }
+
