@@ -32,25 +32,29 @@ public class PlayerAttackInput : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current == null) return;
-        if (isAttacking) return;
+        if (Keyboard.current == null && Gamepad.current == null) return;
+if (isAttacking) return;
 
-        if (Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame)|| (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame)
-        {
-            StartCoroutine(DoKick()); // changed
-        }
-        else if (Keyboard.current != null && Keyboard.current.digit2Key.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
-        {
-            StartCoroutine(DoPunch());
-        }
-        else if (Keyboard.current != null && Keyboard.current.digit3Key.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
-        {
-            StartCoroutine(DoCrossPunch());
-        }
-        else if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.leftShoulder.wasPressedThisFrame)
-        {
-            DoPickUp();
-        }
+if ((Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame) ||
+    (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame))
+{
+    StartCoroutine(DoKick());
+}
+else if ((Keyboard.current != null && Keyboard.current.digit2Key.wasPressedThisFrame) ||
+         (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame))
+{
+    StartCoroutine(DoPunch());
+}
+else if ((Keyboard.current != null && Keyboard.current.digit3Key.wasPressedThisFrame) ||
+         (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame))
+{
+    StartCoroutine(DoCrossPunch());
+}
+else if ((Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame) ||
+         (Gamepad.current != null && Gamepad.current.leftShoulder.wasPressedThisFrame))
+{
+    DoPickUp();
+}
     }
 
     private IEnumerator DoKick()
