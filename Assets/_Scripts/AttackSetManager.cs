@@ -35,19 +35,19 @@ public class PlayerAttackInput : MonoBehaviour
         if (Keyboard.current == null) return;
         if (isAttacking) return;
 
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)//|| Gamepad.current.buttonNorth.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame)|| (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame)
         {
             StartCoroutine(DoKick()); // changed
         }
-        else if (Keyboard.current.digit2Key.wasPressedThisFrame)// || Gamepad.current.buttonWest.wasPressedThisFrame)
+        else if (Keyboard.current != null && Keyboard.current.digit2Key.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
         {
             StartCoroutine(DoPunch());
         }
-        else if (Keyboard.current.digit3Key.wasPressedThisFrame)// || Gamepad.current.buttonEast.wasPressedThisFrame)
+        else if (Keyboard.current != null && Keyboard.current.digit3Key.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
         {
             StartCoroutine(DoCrossPunch());
         }
-        else if (Keyboard.current.fKey.wasPressedThisFrame)// || Gamepad.current.leftShoulder.wasPressedThisFrame)
+        else if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame) ||(Gamepad.current != null && Gamepad.current.leftShoulder.wasPressedThisFrame)
         {
             DoPickUp();
         }
