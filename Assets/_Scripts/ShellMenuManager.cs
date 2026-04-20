@@ -137,4 +137,10 @@ public class ShellMenuUI : MonoBehaviour
         Time.timeScale = 2f;
         SceneManager.LoadScene(mainMenuSceneName);
     }
+
+    private void loadSceneByName(string sceneName)
+    {
+        Time.timeScale = 2f;
+        SceneManager.LoadScene(sceneName);
+    }
 }
