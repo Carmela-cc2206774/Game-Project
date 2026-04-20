@@ -139,4 +139,12 @@ public class NPCInteractTrigger : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void triggerTalkAnimation()
+    {
+        if (npcAnimator != null)
+        {
+            npcAnimator.SetTrigger("Talk");
+        }
+    }
 }
