@@ -1,28 +1,49 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         xmlns:uie="UnityEditor.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+         editor-extension-mode="False">
+
     <Style src="project://database/Assets/UIToolkit/ShellMenu.uss?fileID=7433441132597879392&amp;guid=66757b7c360516949bec36c13b685dd2&amp;type=3#ShellMenu" />
+
     <ui:VisualElement name="shell-root">
-        <ui:Button name="menu-open-button" text="Menu  [ESC]" style="-unity-text-align: middle-center; width: 201px;" />
-        <ui:VisualElement name="shell-container" style="white-space: normal; width: 1031px; right: auto; align-items: stretch; height: 530px; top: 200px; flex-direction: row; justify-content: space-around; align-self: center; align-content: center; -unity-text-align: upper-left; left: auto; bottom: 0;">
-            <ui:VisualElement name="shell-panel" style="width: 424px; height: 490px;">
+
+        <ui:Button name="menu-open-button"
+                   text="Menu  [ESC]"
+                   style="-unity-text-align: middle-center; width: 201px;" />
+
+        <ui:VisualElement name="shell-container"
+                          style="white-space: normal; width: 500px; right: auto; align-items: center; height: 530px; top: 200px; flex-direction: row; justify-content: center; align-self: center; align-content: center; -unity-text-align: upper-left; left: auto; bottom: 0;">
+
+            <ui:VisualElement name="shell-panel"
+                              style="width: 424px; height: 490px;">
+
                 <ui:VisualElement name="shell-header">
                     <ui:Label name="menu-title" text="Menu" />
-                    <ui:Button name="close-button" text="X" style="-unity-text-align: middle-center;" />
+                    <ui:Button name="close-button"
+                               text="X"
+                               style="-unity-text-align: middle-center;" />
                 </ui:VisualElement>
-                <ui:Button name="map-button" text="Closet" style="-unity-text-align: middle-center;" />
-                <ui:Button name="save-button" text="Save Game" style="-unity-text-align: middle-center;" />
-                <ui:Button name="exit-button" text="Exit to Main Menu" style="-unity-text-align: middle-center;" />
+
+                <ui:Button name="map-button"
+                           text="Closet"
+                           style="-unity-text-align: middle-center;" />
+
+                <ui:Button name="save-button"
+                           text="Save Game"
+                           style="-unity-text-align: middle-center;" />
+
+                <ui:Button name="exit-button"
+                           text="Exit to Main Menu"
+                           style="-unity-text-align: middle-center;" />
+
             </ui:VisualElement>
-            <ui:VisualElement name="quest-panel" style="width: 592px; height: 489px;">
-                <ui:Label name="quest-title" text="Quest Log" />
-                <ui:ScrollView name="quest-scrollview" mode="Vertical">
-                    <ui:VisualElement name="quest-list">
-                        <ui:Label name="quest-item-1" text="• Explore the area ahead" />
-                        <ui:Label name="quest-item-2" text="• Speak to the nearby resident" />
-                        <ui:Label name="quest-item-3" text="• Investigate the bridge" />
-                    </ui:VisualElement>
-                </ui:ScrollView>
-            </ui:VisualElement>
+
         </ui:VisualElement>
-        <ui:VisualElement name="dim-background" style="top: -1px; bottom: 2px; right: -4px; left: 7px;" />
+
+        <ui:VisualElement name="dim-background"
+                          style="top: -1px; bottom: 2px; right: -4px; left: 7px;" />
+
     </ui:VisualElement>
+
 </ui:UXML>
