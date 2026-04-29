@@ -6,6 +6,10 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 30;
     private int currentHealth;
 
+    [Header("Drop")]
+public GameObject gemPrefab;
+public Transform dropPoint;
+
     [Header("Animation")]
     [SerializeField] private Animator animator;
 
@@ -43,9 +47,15 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth > 0)
         {
             animator.SetTrigger(TakePunch);
+            EnemyAI enemyAI = GetComponent<EnemyAI>();
+    if (enemyAI != null)
+    {
+        enemyAI.StartTakingHit(0.6f);
+    }
         }
         else
         {
+  
             Die();
         }
     }
@@ -66,6 +76,19 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log(gameObject.name + " died.");
 
         animator.SetTrigger(Death);
+        EnemyAI enemyAI = GetComponent<EnemyAI>();
+if (enemyAI != null)
+{
+    enemyAI.SetDead();
+}
+if (gemPrefab != null)
+{
+    Vector3 dropPosition = dropPoint != null 
+        ? dropPoint.position 
+        : transform.position + Vector3.up * 0.5f;
+
+    Instantiate(gemPrefab, dropPosition, Quaternion.identity);
+}
         Destroy(gameObject, 2f);
     }
 }

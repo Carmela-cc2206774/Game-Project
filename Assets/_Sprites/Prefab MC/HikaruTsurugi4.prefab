@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1678907000669416651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3586172294146390111}
+  m_Layer: 0
+  m_Name: KickPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3586172294146390111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678907000669416651}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.4151528, y: -0.013694048, z: 0.0063279285, w: 0.9096266}
+  m_LocalPosition: {x: 0, y: 0.004647652, z: 0.00045617603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9105281068918614093}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2302520064324072204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6751418425805414517}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6751418425805414517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302520064324072204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0025988482, y: 1.0240953e-10, z: 4.0975318e-12, w: 0.99999666}
+  m_LocalPosition: {x: -0, y: 0.0010875264, z: 0.0031181995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2517795028231341715}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7083171646810878953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8865612060358188327}
+  m_Layer: 0
+  m_Name: PunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8865612060358188327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083171646810878953}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0029250549, y: -0.019924812, z: -0.05066229, w: 0.9985128}
+  m_LocalPosition: {x: 0.00016179154, y: 0.0040644463, z: 0.00013323329}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1282947280600421183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3629530937863022231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,7 +163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
       propertyPath: m_Controller
@@ -78,6 +171,87 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 99b99c86e8b58b647a954b32dad2de83, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -3746190272939815206, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3586172294146390111}
+    - targetCorrespondingSourceObject: {fileID: -8021001004253913084, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6751418425805414517}
+    - targetCorrespondingSourceObject: {fileID: 2563496969622287784, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8865612060358188327}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 580906548367434974}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7310488892454641232}
   m_SourcePrefab: {fileID: 100100000, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+--- !u!4 &1282947280600421183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2563496969622287784, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+  m_PrefabInstance: {fileID: 3629530937863022231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2517795028231341715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8021001004253913084, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+  m_PrefabInstance: {fileID: 3629530937863022231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4512544126688861126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+  m_PrefabInstance: {fileID: 3629530937863022231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &580906548367434974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512544126688861126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df13067547507c4aa05bea17d70cee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackInput
+  animator: {fileID: 7148402836808473350}
+  meleeDamage: {fileID: 7310488892454641232}
+  punchHitDelay: 1
+  crossPunchHitDelay: 1
+  kickHitDelay: 1
+  punchAttackDuration: 0.5
+  crossPunchAttackDuration: 0.5
+  kickAttackDuration: 0.7
+--- !u!114 &7310488892454641232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512544126688861126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993c20b0b65083d45854432a75e9d969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMeleeDamage
+  punchPoint: {fileID: 8865612060358188327}
+  kickPoint: {fileID: 3586172294146390111}
+  punchRange: 1
+  kickRange: 1.2
+  punchDamage: 10
+  kickDamage: 12
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!95 &7148402836808473350 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+  m_PrefabInstance: {fileID: 3629530937863022231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9105281068918614093 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3746190272939815206, guid: 73e8cd24b43387a438ac3e79454c0086, type: 3}
+  m_PrefabInstance: {fileID: 3629530937863022231}
+  m_PrefabAsset: {fileID: 0}
