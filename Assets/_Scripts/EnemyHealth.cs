@@ -87,7 +87,7 @@ if (gemPrefab != null)
         ? dropPoint.position 
         : transform.position + Vector3.up * 0.5f;
 
-   // Instantiate(gemPrefab, dropPosition, Quaternion.identity);
+    Instantiate(gemPrefab, dropPosition, Quaternion.identity);
 }
         Destroy(gameObject, 2f);
     }

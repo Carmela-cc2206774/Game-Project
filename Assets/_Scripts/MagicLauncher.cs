@@ -26,7 +26,7 @@ public class MagicLauncher : MonoBehaviour
     {
         if (firePoint == null)
         {
-            firePoint = FindChildByName(transform, "FirePoint");
+            firePoint = FindChildByName(transform, "PunchPoint");
             Debug.Log("Punch point found: " + (firePoint != null ? firePoint.name : "NULL"));
         }
 

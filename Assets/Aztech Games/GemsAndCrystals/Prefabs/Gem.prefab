@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3076669605551186986}
   - component: {fileID: 6970270877923856825}
   - component: {fileID: 7149863314429276959}
+  - component: {fileID: 2468748201087601892}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Gem
@@ -124,4 +125,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eceb10cb6a14eb5479fb26e055b7e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemPickup
-  pickupText: {fileID: 0}
+  pickupText: {fileID: 6213047340586958429, guid: 6a5e998ba9b58ea49b9ea3c9af095a8c, type: 3}
+--- !u!54 &2468748201087601892
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311676079619618908}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

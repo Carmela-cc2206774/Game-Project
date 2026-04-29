@@ -18,18 +18,41 @@ public class PlayerRespawn : MonoBehaviour
         }
     }
 
-    void Respawn()
+
+void Respawn()
+{
+    Debug.Log("Respawning...");
+
+    if (controller != null)
+        controller.enabled = false;
+
+    transform.position = respawnPoint.position;
+
+    if (controller != null)
+        controller.enabled = true;
+
+    health.ResetHealth();
+
+    // 🔥 FORCE animator to Idle
+    Animator anim = GetComponent<Animator>();
+    if (anim != null)
     {
-        Debug.Log("Respawning...");
-
-        if (controller != null)
-            controller.enabled = false;
-
-        transform.position = respawnPoint.position;
-
-        if (controller != null)
-            controller.enabled = true;
-
-        health.ResetHealth();
+        anim.Rebind();       // resets animator state
+        anim.Update(0f);     // applies it immediately
     }
+}
+    // void Respawn()
+    // {
+    //     Debug.Log("Respawning...");
+
+    //     if (controller != null)
+    //         controller.enabled = false;
+
+    //     transform.position = respawnPoint.position;
+
+    //     if (controller != null)
+    //         controller.enabled = true;
+
+    //     health.ResetHealth();
+    // }
 }

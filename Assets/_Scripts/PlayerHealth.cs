@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log("Player took damage: " + damage + " | HP: " + currentHealth);
         UpdateHealthBar();
 
@@ -66,8 +67,8 @@ void UpdateHealthBar()
 }
     void TriggerRespawn()
     {
-        if (animator != null)
-            animator.SetTrigger(Respawn);
+        // if (animator != null)
+        //     animator.SetTrigger(Respawn);
         OnDeath?.Invoke();
     }
 
@@ -75,6 +76,7 @@ void UpdateHealthBar()
     {
         currentHealth = maxHealth;
         isDead = false;
+        UpdateHealthBar();
     }
 }
 // using UnityEngine;
