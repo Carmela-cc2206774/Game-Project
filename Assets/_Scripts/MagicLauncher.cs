@@ -48,7 +48,7 @@ public class MagicLauncher : MonoBehaviour
 
             animator?.SetTrigger("MagicAttack");
 
-            StartCoroutine(FireWithDelay(0.5f, lightOrbPrefab, lightForce));
+            StartCoroutine(FireWithDelay(1f, lightOrbPrefab, lightForce));
         }
 
         // 🔸 HEAVY CAST (Key 5)
@@ -60,7 +60,7 @@ public class MagicLauncher : MonoBehaviour
 
             animator?.SetTrigger("MagicAreaAttack");
 
-            StartCoroutine(FireWithDelay(0.8f, heavyOrbPrefab, heavyForce));
+            StartCoroutine(FireWithDelay(2f, heavyOrbPrefab, heavyForce));
         }
     }
 
@@ -102,7 +102,46 @@ public class MagicLauncher : MonoBehaviour
 
     //     Destroy(orb, 5f);
     // }
-    void Shoot(GameObject prefab, float force)
+//     void Shoot(GameObject prefab, float force)
+// {
+//     if (prefab == null)
+//     {
+//         Debug.LogError("Magic orb prefab is missing.");
+//         return;
+//     }
+
+//     if (firePoint == null)
+//     {
+//         Debug.LogError("FirePoint is missing.");
+//         return;
+//     }
+
+//     Debug.Log("Spawning magic orb: " + prefab.name);
+
+//     GameObject orb = Instantiate(
+//         prefab,
+//         firePoint.position,
+//         Quaternion.LookRotation(transform.forward)
+//     );
+
+//     Rigidbody rb = orb.GetComponent<Rigidbody>();
+//     if (rb == null)
+//     {
+//         Debug.LogError("Magic orb has no Rigidbody.");
+//         return;
+//     }
+
+//     rb.useGravity = false;
+
+//     Vector3 direction = transform.forward;
+//     direction.y += 0.1f;
+//     direction.Normalize();
+
+//     rb.linearVelocity = direction * force;
+
+//     Destroy(orb, 5f);
+// }
+void Shoot(GameObject prefab, float force)
 {
     if (prefab == null)
     {
@@ -121,7 +160,7 @@ public class MagicLauncher : MonoBehaviour
     GameObject orb = Instantiate(
         prefab,
         firePoint.position,
-        Quaternion.LookRotation(transform.forward)
+        firePoint.rotation // ✅ use firePoint rotation
     );
 
     Rigidbody rb = orb.GetComponent<Rigidbody>();
@@ -133,8 +172,8 @@ public class MagicLauncher : MonoBehaviour
 
     rb.useGravity = false;
 
-    Vector3 direction = transform.forward;
-    direction.y += 0.1f;
+    // ✅ use firePoint direction
+    Vector3 direction = firePoint.forward;
     direction.Normalize();
 
     rb.linearVelocity = direction * force;

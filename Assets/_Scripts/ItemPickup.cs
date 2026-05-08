@@ -4,10 +4,19 @@ using System.Collections;
 
 public class ItemPickup : MonoBehaviour
 {
+    [Header("Pickup Settings")]
     public GameObject pickupText;
-    public string itemName = "Item"; // change per object
+    public string itemName = "Item";
+
+    [Header("Quest Settings")]
+    [SerializeField] private QuestPopupController questPopupController;
+    [SerializeField] private int requiredItems = 2;
+
+    private static int pickedUpCount = 0;
+    private static bool nextQuestTriggered = false;
 
     private bool playerInRange = false;
+    private bool isPickedUp = false;
 
     void Start()
     {
@@ -19,7 +28,7 @@ public class ItemPickup : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !isPickedUp)
         {
             if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
             {
@@ -30,33 +39,45 @@ public class ItemPickup : MonoBehaviour
 
     void PickUp()
     {
-        // if (pickupText != null)
-        //     pickupText.SetActive(false);
+        if (isPickedUp) return;
 
-        // Debug.Log(itemName + " picked up!");
-
-        // Destroy(gameObject);
+        isPickedUp = true;
         StartCoroutine(PickUpWithDelay());
     }
 
+    IEnumerator PickUpWithDelay()
+    {
+        if (pickupText != null)
+            pickupText.SetActive(false);
 
-IEnumerator PickUpWithDelay()
-{
-    if (pickupText != null)
-        pickupText.SetActive(false);
+        Debug.Log(itemName + " picked up!");
 
-    // 🔥 Trigger animation here
-    // Example:
-    // animator.SetTrigger("PickUp");
+        yield return new WaitForSeconds(2f);
 
-    yield return new WaitForSeconds(2f); // ⏱️ adjust delay
+        pickedUpCount++;
 
-    Destroy(gameObject);
-}
+        Debug.Log("Quest items picked up: " + pickedUpCount + "/" + requiredItems);
+
+        if (pickedUpCount >= requiredItems && !nextQuestTriggered)
+        {
+            nextQuestTriggered = true;
+
+            if (questPopupController != null)
+            {
+                questPopupController.CompleteFirstQuest();
+            }
+            else
+            {
+                Debug.LogWarning("QuestPopupController is not assigned on " + gameObject.name);
+            }
+        }
+
+        Destroy(gameObject);
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isPickedUp)
         {
             playerInRange = true;
 

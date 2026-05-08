@@ -1,39 +1,6 @@
-// using UnityEngine;
-// using UnityEngine.InputSystem;
-
-// public class QuestPopupController : MonoBehaviour
-// {
-//     [SerializeField] private GameObject questPopup;
-//     [SerializeField] private AudioSource audioSource;
-//     [SerializeField] private AudioClip popupSound;
-
-//     public void ShowQuestPopup()
-//     {
-//         if (questPopup != null)
-//             questPopup.SetActive(true);
-
-//         if (audioSource != null && popupSound != null)
-//             audioSource.PlayOneShot(popupSound);
-
-//         Time.timeScale = 0f;
-
-//         Cursor.visible = true;
-//         Cursor.lockState = CursorLockMode.None;
-//     }
-
-//     public void HideQuestPopup()
-//     {
-//         if (questPopup != null)
-//             questPopup.SetActive(false);
-
-//         Time.timeScale = 1f;
-
-//         Cursor.visible = false;
-//         Cursor.lockState = CursorLockMode.Locked;
-//     }
-// }
-
 using UnityEngine;
+using StarterAssets;
+using System.Collections;
 
 public class QuestPopupController : MonoBehaviour
 {
@@ -41,11 +8,18 @@ public class QuestPopupController : MonoBehaviour
     [SerializeField] private GameObject firstQuestPopup;
     [SerializeField] private GameObject secondQuestPopup;
 
+    [Header("Second Popup Auto Close")]
+    [SerializeField] private float secondPopupCloseDelay = 5f;
+
+    [Header("Player Input")]
+    [SerializeField] private StarterAssetsInputs starterInputs;
+
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip popupSound;
 
     private bool firstQuestCompleted = false;
+    private bool popupIsOpen = false;
 
     private void Start()
     {
@@ -54,6 +28,28 @@ public class QuestPopupController : MonoBehaviour
 
         if (secondQuestPopup != null)
             secondQuestPopup.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (popupIsOpen)
+            UnlockCursor();
+    }
+
+    private void LateUpdate()
+    {
+        if (popupIsOpen)
+            UnlockCursor();
+    }
+
+    public void ShowQuestPopup()
+    {
+        ShowFirstQuestPopup();
+    }
+
+    public void HideQuestPopup()
+    {
+        HideFirstQuestPopup();
     }
 
     public void ShowFirstQuestPopup()
@@ -76,11 +72,20 @@ public class QuestPopupController : MonoBehaviour
             firstQuestPopup.SetActive(false);
 
         ShowPopup(secondQuestPopup);
+
+        StartCoroutine(AutoCloseSecondPopup());
     }
 
     public void HideSecondQuestPopup()
     {
         HidePopup(secondQuestPopup);
+    }
+
+    private IEnumerator AutoCloseSecondPopup()
+    {
+        yield return new WaitForSecondsRealtime(secondPopupCloseDelay);
+
+        HideSecondQuestPopup();
     }
 
     private void ShowPopup(GameObject popup)
@@ -92,9 +97,9 @@ public class QuestPopupController : MonoBehaviour
             audioSource.PlayOneShot(popupSound);
 
         Time.timeScale = 0f;
+        popupIsOpen = true;
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        UnlockCursor();
     }
 
     private void HidePopup(GameObject popup)
@@ -103,8 +108,32 @@ public class QuestPopupController : MonoBehaviour
             popup.SetActive(false);
 
         Time.timeScale = 1f;
+        popupIsOpen = false;
 
+        LockCursor();
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        if (starterInputs != null)
+        {
+            starterInputs.cursorLocked = false;
+            starterInputs.cursorInputForLook = false;
+        }
+    }
+
+    private void LockCursor()
+    {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (starterInputs != null)
+        {
+            starterInputs.cursorLocked = true;
+            starterInputs.cursorInputForLook = true;
+        }
     }
 }
