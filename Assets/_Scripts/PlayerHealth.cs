@@ -1,11 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
     public Image healthBarFill;
     public int maxHealth = 100;
     public int currentHealth;
+
+[Header("Health Regen")]
+public float regenDelay = 5f;
+public int regenAmount = 2;
+public float regenInterval = 1f;
+
+private float lastDamageTime;
 
     public Animator animator;
     public System.Action OnDeath;
@@ -23,12 +31,13 @@ public class PlayerHealth : MonoBehaviour
 
         ResetHealth();
         UpdateHealthBar();
+         StartCoroutine(RegenerateHealth());
     }
 
     public void TakeDamage(int damage)
     {
         if (isDead) return;
-
+lastDamageTime = Time.time;
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log("Player took damage: " + damage + " | HP: " + currentHealth);
@@ -78,6 +87,28 @@ void UpdateHealthBar()
         isDead = false;
         UpdateHealthBar();
     }
+
+    private System.Collections.IEnumerator RegenerateHealth()
+{
+    while (true)
+    {
+        yield return new WaitForSeconds(regenInterval);
+
+        if (isDead) continue;
+
+        // Wait some time after taking damage
+        if (Time.time - lastDamageTime < regenDelay)
+            continue;
+
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += regenAmount;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            UpdateHealthBar();
+        }
+    }
+}
 }
 // using UnityEngine;
 

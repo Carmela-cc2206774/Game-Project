@@ -111,8 +111,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.9084039
-  m_Center: {x: 0, y: 0.21275629, z: -0.32421827}
+  m_Radius: 1.0380168
+  m_Center: {x: 0, y: 0.21275629, z: -0.45383134}
 --- !u!114 &7149863314429276959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eceb10cb6a14eb5479fb26e055b7e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemPickup
-  pickupText: {fileID: 6213047340586958429, guid: 6a5e998ba9b58ea49b9ea3c9af095a8c, type: 3}
 --- !u!54 &2468748201087601892
 Rigidbody:
   m_ObjectHideFlags: 0

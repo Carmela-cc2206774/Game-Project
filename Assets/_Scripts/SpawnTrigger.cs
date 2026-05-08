@@ -19,9 +19,9 @@ public class SpawnTrigger : MonoBehaviour
             if (enemySpawner != null)
                 enemySpawner.StartSpawning();
 
-            // Show your existing UI
-            // if (controlsUI != null)
-            //     controlsUI.SetActive(true);
+          // Show your existing UI
+            if (controlsUI != null)
+                controlsUI.SetActive(true);
         }
     }
 }
