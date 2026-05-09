@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eceb10cb6a14eb5479fb26e055b7e02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GemPickup
+  pickupSound: {fileID: 8300000, guid: a1730bef53021bf41adf34cb9f50af64, type: 3}
 --- !u!54 &2468748201087601892
 Rigidbody:
   m_ObjectHideFlags: 0

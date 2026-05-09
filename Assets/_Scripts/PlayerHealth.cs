@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public Image healthBarFill;
     public int maxHealth = 100;
     public int currentHealth;
+    public AudioClip hurtSound;
 
 [Header("Health Regen")]
 public float regenDelay = 5f;
@@ -39,6 +40,10 @@ private float lastDamageTime;
         if (isDead) return;
 lastDamageTime = Time.time;
         currentHealth -= damage;
+        if (hurtSound != null)
+{
+    AudioSource.PlayClipAtPoint(hurtSound, transform.position);
+}
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log("Player took damage: " + damage + " | HP: " + currentHealth);
         UpdateHealthBar();

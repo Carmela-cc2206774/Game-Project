@@ -30,10 +30,10 @@ public class UIToggle : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        if (healthUi != null)
-            healthUi.SetActive(false);
+        // if (healthUi != null)
+        //     healthUi.SetActive(false);
 
-        if (gemText != null)
-            gemText.gameObject.SetActive(false);
+        // if (gemText != null)
+        //     gemText.gameObject.SetActive(false);
     }
 }

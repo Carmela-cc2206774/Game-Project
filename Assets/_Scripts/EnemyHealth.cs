@@ -5,7 +5,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 30;
     private int currentHealth;
-
+public System.Action OnEnemyDeath;
+public AudioClip hitSound;
     [Header("Drop")]
 public GameObject gemPrefab;
 public Transform dropPoint;
@@ -38,6 +39,10 @@ public Transform dropPoint;
         if (isDead) return;
 
         currentHealth -= damageAmount;
+        if (hitSound != null)
+{
+    AudioSource.PlayClipAtPoint(hitSound, transform.position);
+}
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         Debug.Log(gameObject.name + " took damage. Health left: " + currentHealth);
@@ -89,6 +94,7 @@ if (gemPrefab != null)
 
     Instantiate(gemPrefab, dropPosition, Quaternion.identity);
 }
+OnEnemyDeath?.Invoke();
         Destroy(gameObject, 2f);
     }
 }

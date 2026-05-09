@@ -11,6 +11,9 @@ public class MagicLauncher : MonoBehaviour
     public Transform firePoint;
     public Animator animator;
 
+public AudioClip lightMagicSound;
+public AudioClip heavyMagicSound;
+
     [Header("Forces")]
     public float lightForce = 18f;
     public float heavyForce = 10f;
@@ -47,7 +50,10 @@ public class MagicLauncher : MonoBehaviour
             nextLightTime = Time.time + lightCooldown;
 
             animator?.SetTrigger("MagicAttack");
-
+if (lightMagicSound != null)
+{
+    AudioSource.PlayClipAtPoint(lightMagicSound, transform.position);
+}
             StartCoroutine(FireWithDelay(1f, lightOrbPrefab, lightForce));
         }
 
@@ -59,6 +65,10 @@ public class MagicLauncher : MonoBehaviour
             nextHeavyTime = Time.time + heavyCooldown;
 
             animator?.SetTrigger("MagicAreaAttack");
+            if (heavyMagicSound != null)
+{
+    AudioSource.PlayClipAtPoint(heavyMagicSound, transform.position);
+}
 
             StartCoroutine(FireWithDelay(2f, heavyOrbPrefab, heavyForce));
         }

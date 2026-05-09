@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class GemPickup : MonoBehaviour
 {
     private bool playerInRange = false;
+    public AudioClip pickupSound;
 
     void Update()
     {
@@ -19,8 +20,11 @@ public class GemPickup : MonoBehaviour
             else
                 Debug.LogError("GemManager instance is missing.");
 
+            if (pickupSound != null)
+                 AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+                 
             GemPickupText.instance?.HidePickup();
-
+            
             Destroy(gameObject);
         }
     }

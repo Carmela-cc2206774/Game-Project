@@ -13,6 +13,7 @@
 }
 
 #start-button,
+#return-button,
 #settings-button,
 #exit-button {
     height: 88px;
@@ -47,6 +48,7 @@
 }
 
 #start-button:hover,
+#return-button:hover,
 #settings-button:hover,
 #exit-button:hover {
     background-color: rgba(156, 72, 112, 0.78);
@@ -59,6 +61,7 @@
 }
 
 #start-button:active,
+#return-button:active,
 #settings-button:active,
 #exit-button:active {
     background-color: rgba(120, 52, 84, 0.92);
