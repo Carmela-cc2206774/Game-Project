@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 
 public class ItemPickup : MonoBehaviour
-{
+{public AudioClip pickupSound;
     [Header("Pickup Settings")]
     public GameObject pickupText;
     public string itemName = "Item";
@@ -51,6 +51,10 @@ public class ItemPickup : MonoBehaviour
             pickupText.SetActive(false);
 
         Debug.Log(itemName + " picked up!");
+        if (pickupSound != null)
+{
+    AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+}
 
         yield return new WaitForSeconds(2f);
 

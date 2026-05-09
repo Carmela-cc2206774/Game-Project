@@ -37,7 +37,7 @@ public class PortalSceneLoader : MonoBehaviour
     }
 
     // lets loading image appear
-    yield return new WaitForSeconds(2f);
+    yield return new WaitForSeconds(3f);
 
     SceneManager.LoadSceneAsync(sceneToLoad);
 }
