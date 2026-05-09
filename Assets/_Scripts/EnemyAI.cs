@@ -6,6 +6,12 @@ public class EnemyAI : MonoBehaviour
     private Transform player;
     private Rigidbody rb;
 
+[Header("Ground Stick")]
+public float groundRayHeight = 2f;
+public float groundRayDistance = 5f;
+public LayerMask groundLayer;
+public float groundOffset = 0.05f;
+
     [Header("Movement")]
     public float speed = 3f;
     public float chaseRange = 10f;
@@ -64,29 +70,55 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void ChasePlayer()
+    // void ChasePlayer()
+    // {
+    //     if (animator != null)
+    //         animator.SetBool(Run, true);
+
+    //     Vector3 direction = player.position - transform.position;
+    //     direction.y = 0f;
+    //     direction.Normalize();
+
+    //     if (rb != null)
+    //     {
+    //         Vector3 velocity = direction * speed;
+    //         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
+    //     }
+    //     else
+    //     {
+    //         transform.position += direction * speed * Time.deltaTime;
+    //     }
+
+    //     Vector3 lookPos = new Vector3(player.position.x, transform.position.y, player.position.z);
+    //     transform.LookAt(lookPos);
+    // }
+void ChasePlayer()
+{
+    if (animator != null)
+        animator.SetBool(Run, true);
+
+    Vector3 direction = player.position - transform.position;
+    direction.y = 0f;
+    direction.Normalize();
+
+    transform.position += direction * speed * Time.deltaTime;
+
+    StickToGround();
+
+    Vector3 lookPos = new Vector3(player.position.x, transform.position.y, player.position.z);
+    transform.LookAt(lookPos);
+}
+void StickToGround()
+{
+    Vector3 rayStart = transform.position + Vector3.up * groundRayHeight;
+
+    if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, groundRayDistance, groundLayer))
     {
-        if (animator != null)
-            animator.SetBool(Run, true);
-
-        Vector3 direction = player.position - transform.position;
-        direction.y = 0f;
-        direction.Normalize();
-
-        if (rb != null)
-        {
-            Vector3 velocity = direction * speed;
-            rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
-        }
-        else
-        {
-            transform.position += direction * speed * Time.deltaTime;
-        }
-
-        Vector3 lookPos = new Vector3(player.position.x, transform.position.y, player.position.z);
-        transform.LookAt(lookPos);
+        Vector3 newPos = transform.position;
+        newPos.y = hit.point.y + groundOffset;
+        transform.position = newPos;
     }
-
+}
     void StopChasing()
     {
         if (animator != null)

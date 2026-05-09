@@ -10,6 +10,8 @@ public class EndGameUI : MonoBehaviour
     private void OnEnable()
     {
         var root = uiDocument.rootVisualElement;
+     UnityEngine.Cursor.lockState = CursorLockMode.None;
+UnityEngine.Cursor.visible = true;
 
         Button returnButton = root.Q<Button>("return-button");
         Button exitButton = root.Q<Button>("exit-button");
