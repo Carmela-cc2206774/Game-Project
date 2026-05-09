@@ -136,4 +136,9 @@ public class QuestPopupController : MonoBehaviour
             starterInputs.cursorInputForLook = true;
         }
     }
+    public void ShowSecondQuestPopup()
+    {
+        ShowPopup(secondQuestPopup);
+        StartCoroutine(AutoCloseSecondPopup());
+    }
 }
