@@ -6,6 +6,7 @@ public class PortalSceneLoader : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad = "EndMenu";
     [SerializeField] private GameObject loadingPanel;
+    [SerializeField] private AudioClip portalSound;
 
     private bool isLoading = false;
 
@@ -24,16 +25,22 @@ public class PortalSceneLoader : MonoBehaviour
     }
 
     private IEnumerator LoadSceneRoutine()
+{
+    isLoading = true;
+
+    if (loadingPanel != null)
+        loadingPanel.SetActive(true);
+
+    if (portalSound != null)
     {
-        isLoading = true;
-
-        if (loadingPanel != null)
-            loadingPanel.SetActive(true);
-
-        yield return null;
-
-        SceneManager.LoadSceneAsync(sceneToLoad);
+        AudioSource.PlayClipAtPoint(portalSound, transform.position);
     }
+
+    // lets loading image appear
+    yield return new WaitForSeconds(2f);
+
+    SceneManager.LoadSceneAsync(sceneToLoad);
+}
 }
 
 // using UnityEngine;
