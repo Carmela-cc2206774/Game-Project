@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections;
 
 public class ObstacleCourseTrigger : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ObstacleCourseTrigger : MonoBehaviour
     [SerializeField] private string promptMessage = "Enter Obstacle Course [E]";
     [SerializeField] private float promptFontSize = 36f;
 
+ [Header("Loading")]
+    [SerializeField] private GameObject loadingPanel;
+
     [Header("Player")]
     [SerializeField] private string playerTag = "Player";
 
@@ -18,22 +22,26 @@ public class ObstacleCourseTrigger : MonoBehaviour
     [SerializeField] private string obstacleCourseSceneName = "ObstacleCourse";
 
     private bool playerInside = false;
+     private bool isLoading = false;
 
     private void Start()
     {
         if (buttonObject != null)
             buttonObject.SetActive(false);
 
+        if (loadingPanel != null)
+            loadingPanel.SetActive(false);
+
         UpdatePromptVisuals();
     }
 
     private void Update()
     {
-        if (!playerInside) return;
+        if (!playerInside || isLoading) return;
 
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            LoadObstacleCourse();
+            StartCoroutine(LoadObstacleCourseRoutine());//LoadObstacleCourse();
         }
     }
 
@@ -67,8 +75,23 @@ public class ObstacleCourseTrigger : MonoBehaviour
         buttonText.fontSize = promptFontSize;
     }
 
-    private void LoadObstacleCourse()
+    // private void LoadObstacleCourse()
+    // {
+    //     SceneManager.LoadScene(obstacleCourseSceneName);
+    // }
+
+    private IEnumerator LoadObstacleCourseRoutine()
     {
-        SceneManager.LoadScene(obstacleCourseSceneName);
+        isLoading = true;
+
+        if (buttonObject != null)
+            buttonObject.SetActive(false);
+
+        if (loadingPanel != null)
+            loadingPanel.SetActive(true);
+
+        yield return null;
+
+        SceneManager.LoadSceneAsync(obstacleCourseSceneName);
     }
 }
