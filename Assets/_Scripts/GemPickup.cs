@@ -22,7 +22,7 @@ public class GemPickup : MonoBehaviour
 
             if (pickupSound != null)
                  AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-                 
+
             GemPickupText.instance?.HidePickup();
             
             Destroy(gameObject);
@@ -38,7 +38,7 @@ public class GemPickup : MonoBehaviour
         {
             playerInRange = true;
 
-            GemPickupText.instance?.ShowPickup("Press F to pick up gem");
+            GemPickupText.instance?.ShowPickup("Pick up gem [F]");
         }
     }
 

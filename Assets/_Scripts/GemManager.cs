@@ -29,4 +29,9 @@ public class GemManager : MonoBehaviour
         if (gemText != null)
             gemText.text = "Gems: " + gemCount;
     }
+
+    public int GetGemCount()
+{
+    return gemCount;
+}
 }
